@@ -1,0 +1,44 @@
+<div *ngIf="user as u; else loading" class="container mt-5 pt-5 text-white">
+  <div class="text-center mb-4">
+    <h2 class="text-success">🧬 Perfil Interdimensional</h2>
+    <img
+      src="https://media.tenor.com/VdU0EmDcy2kAAAAC/rick-and-morty-rick.gif"
+      alt="Rick Profile"
+      style="max-width: 200px"
+      class="my-3 rounded-circle border border-4 border-success shadow"
+    />
+  </div>
+
+  <div class="card bg-dark text-light shadow-lg border border-success">
+    <div class="card-body">
+      <h4 class="card-title text-info">👤 Nome:</h4>
+      <p class="card-text fs-5 ms-3">{{ u.name }}</p>
+
+      <h4 class="card-title text-info">📧 Email:</h4>
+      <p class="card-text fs-5 ms-3">{{ u.email }}</p>
+
+      <h4 class="card-title text-info">⭐ Favoritos:</h4>
+      <div *ngIf="u.favorites.length > 0; else noFavs" class="ms-3">
+        <ul class="list-group bg-dark">
+          <li
+            *ngFor="let fav of u.favorites"
+            class="list-group-item bg-secondary text-light"
+          >
+            {{ fav }}
+          </li>
+        </ul>
+      </div>
+      <ng-template #noFavs>
+        <p class="text-warning ms-3">
+          Você ainda não favoritou nada... nem um Meeseeks?! 😢
+        </p>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="text-center text-white mt-5">
+    <p>🔍 Carregando perfil interdimensional...</p>
+  </div>
+</ng-template>

@@ -1,0 +1,15 @@
+[
+  {
+    "user": "rick@gmail.com",
+    "password": "morty",
+    "name": "Rick Sanchez",
+    "favorites": []
+  },
+
+  {
+    "user": "jerry@hotmail",
+    "password": "123",
+    "name": "Jerry Smith",
+    "favorites": []
+  }
+]

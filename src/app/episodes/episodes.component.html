@@ -1,0 +1,23 @@
+<div class="container mt-5 pt-5 w-100 h-auto">
+  <div class="row g-4">
+    <div
+      class="col-md-6 col-lg-4"
+      *ngFor="let e of episodes$ | async as Episode"
+    >
+      <div class="card h-100 shadow-sm border-0 hover-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ e.name }}</h5>
+          <p class="card-text mb-1">
+            <strong>Episode:</strong> {{ e.episode }}
+          </p>
+          <p class="card-text mb-1">
+            <strong>Air Date:</strong> {{ e.air_date }}
+          </p>
+        </div>
+        <div class="card-footer bg-white border-top-0 text-end">
+          <span class="badge bg-dark">ID: {{ e.id }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
